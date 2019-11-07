@@ -15,25 +15,31 @@ df
 
 Question 2
 def test_create_dataframe(df, column_list):
-    if df is < 10: 
-        return False 
+    list_of_actual_columns = list(df.columns.values)
     
-    
-#     df = df[[range(11)],['starttime', 'stoptime']]
-#     df['trip_duration'] = df['tripduration'] * 2
-#     if column_names == column_names
-#     return df
+    #C1
+    for each_column in column_list:
+        if each_column not in list_of_actual_columns:
+            return False
 
-test_create_dataframe(df, ['starttime', 'stoptime'])
+    #C2
+    type_row0_column_starttime = type(df.iloc[0]['starttime'])
+    for index, row in df.iterrows():
+        print(index)
+        print(row['starttime'])
     
-#     if db_columns == list[column]
-#     if column_values == same_type
-#     if data_frame_size == same_rows
+    type_variable = type(row['starttime'])
+    print(type_variable)
     
-#     return True
+    if type_row0_column_starttime == type_variable:
+        print("YAY")
+    else:
+        print("return False")
     
-    if rows < 10:
-        return False 
-    if .....
-    if ....
+    #C3
+    number_of_rows = df.shape[0]
+    print(number_of_rows)
+    if number_of_rows < 10:
+        return False
+        
     return True
